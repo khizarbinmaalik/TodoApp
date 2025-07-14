@@ -7,7 +7,7 @@ function Form() {
   const [category, setCategory] = useState("Personal");
   const [priority, setPriority] = useState("Medium");
   const { addTodo } = useTodoContext();
-  
+
   function handleClick(e) {
     e.preventDefault();
     const todo = {
@@ -18,7 +18,7 @@ function Form() {
       priority: priority,
       completed: false,
     };
-    
+
     if (todoTitle && todoMsg && category && priority) {
       addTodo(todo);
       setTodoTitle("");
@@ -27,7 +27,7 @@ function Form() {
       alert("Please fill all fields");
     }
   }
-  
+
   return (
     <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden transition-all duration-500 transform hover:shadow-2xl">
       <div className="relative">
@@ -113,9 +113,7 @@ function Form() {
                 <option className="text-gray-800 dark:text-white">
                   Personal
                 </option>
-                <option className="text-gray-800 dark:text-white">
-                  Work
-                </option>
+                <option className="text-gray-800 dark:text-white">Work</option>
                 <option className="text-gray-800 dark:text-white">
                   Health
                 </option>
@@ -141,9 +139,7 @@ function Form() {
                 <option className="text-gray-800 dark:text-white">
                   Medium
                 </option>
-                <option className="text-gray-800 dark:text-white">
-                  High
-                </option>
+                <option className="text-gray-800 dark:text-white">High</option>
               </select>
             </div>
           </div>
