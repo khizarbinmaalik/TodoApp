@@ -82,7 +82,7 @@ export default function SignupForm() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
           >
-            Join our community of writers and readers
+            Create your account to start managing your tasks
           </motion.p>
         </div>
 
