@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-
+import { setEmpty } from "./todosSlice";
 const initialState = {
     isLoggedIn: false,
     user: null,

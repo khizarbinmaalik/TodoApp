@@ -1,5 +1,5 @@
 import config from "../config.js";
-import { Client, ID, Databases } from "appwrite";
+import { Client, ID, Databases, Query } from "appwrite";
 
 class DatabaseServices {
     client = new Client();
@@ -59,6 +59,20 @@ class DatabaseServices {
             return todo;
         } catch (error) {
             console.error("Error updating todo:", error);
+            throw error;
+        }
+    }
+    async toggleTodoCompletion(todoId, completed) {
+        try {
+            const todo = await this.databases.updateDocument(
+                config.databaseId,
+                config.collectionId,
+                todoId,
+                { completed : completed }
+            );
+            return todo;
+        } catch (error) {
+            console.error("Error toggling todo completion:", error);
             throw error;
         }
     }
